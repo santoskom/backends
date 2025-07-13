@@ -6,11 +6,11 @@ const { pool, testConnection } = require('./db');
 const { sendEmail } = require('./services/mailer');
 // const cors = require('cors');
 const app = express();
-const PORT = 5000;
 
+const PORT = process.env.PORT || 5000;
 app.use(cors({
-  origin: 'http://localhost:3000', // l'adresse de ton frontend React
-  credentials: true,                // si tu utilises des cookies ou auth
+  origin: '*', // ou l'URL de ton frontend
+  credentials: true,
 }));
 // Middlewares
 app.use(cors());
