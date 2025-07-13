@@ -111,6 +111,11 @@ app.use('/api/dashboard', dashboardRoutes);
 const delete1Route = require('./auth/delete1');
 app.use('/api/delete1', delete1Route); 
 console.log('Route delete  chargée');
+
+
+app.get('/', (req, res) => {
+  res.send('Bienvenue sur l’API Vaccination !');
+});
 //end professionnel
 // Démarrage serveur
 app.listen(PORT, () => {
